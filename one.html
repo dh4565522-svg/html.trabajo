@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revista</title>
+
+<!-- Google Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#111;
+    padding:0 40px;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-right:25px;
+    font-size:13px;
+    text-transform:uppercase;
+    font-weight:bold;
+    letter-spacing:0.5px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#1cc6cc;
+}
+
+/* ====== ICONOS Y BUSCADOR ====== */
+
+.right-menu{
+    display:flex;
+    align-items:center;
+}
+
+.right-menu i{
+    color:#fff;
+    margin-right:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.right-menu i:hover{
+    color:#ff4d4d;
+}
+
+/* Buscador con color */
+.search-box{
+    background:#ff4d4d;
+    padding:8px 12px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#fff;
+    width:120px;
+}
+
+.search-box input::placeholder{
+    color:#ffe6e6;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    background:url(img/fondo.jpg)
+    no-repeat center center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    color:#2998ff;
+}
+
+.hero h1{
+    font-size:67px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#ff4d4d;
+    padding:12px 25px;
+    border-radius:6px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+    transition:.3s;
+    margin-top: 10px; border-radius: 4px;
+}
+
+.btn:hover{
+    background:#e60000;
+}
+
+    .texto {
+        max-width: 500px;
+        line-height: 1.6;
+        font-size: 16px;
+    }
+    .texto p {
+        margin-bottom: 20px;
+    }
+        .container {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        padding-bottom: 80px;
+    }
+
+    .imagen img {
+        width: 350px;
+        border-radius: 5px;
+    }
+    
+/* ================= SECCIONES ================= */
+
+section{
+    padding:120px 40px;
+    min-height:100vh;
+}
+
+section h2{
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+#sobre mi{background:#0c0c0d;}
+#casa{background:#0f0e0e;}
+#chical{background:#0d0d0d;}
+#hortalizas{background:#0d0d0d;}
+#reporteras{background:#121111;}
+#poesia{background:#0a0a0a;}
+#eventos{background:#0b0b0b;}
+
+/* espacio por navbar fija */
+.spacer{
+    height:70px;
+}
+
+    .eventos-footer{
+    background:#2f4a73;
+    color:#fff;
+    padding:60px 40px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.footer-col{
+    flex:1;
+    min-width:250px;
+    margin:20px;
+}
+
+.footer-col h3{
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.social-icons i{
+    margin-right:15px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.social-icons i:hover{
+    color:#4da3ff;
+}
+
+.footer-col p{
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+        .contacto {
+            background: #cfcfcf;
+            padding: 50px;
+        }
+
+        .contacto h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .contacto-contenido {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .columna {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .redes a {
+            color: #fff;
+            font-size: 20px;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .redes a:hover {
+            color: #333;
+        }
+
+        .info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .suscripcion input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .suscripcion button {
+            width: 100%;
+            padding: 12px;
+            background: #2f6ee4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .suscripcion button:hover {
+            background: #1f55b5;
+        }
+        .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp img {
+        width: 60px;
+        height: 60px;
+    }
+
+    @media (max-width: 900px) {
+        .container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .imagen img {
+            width: 250px;
+        }
+    }
+    
+     body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #1a1a1a;
+        color: #fff;
+    }
+
+    .servicios {
+        padding: 60px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        position: relative;
+        padding: 30px;
+        border-radius: 20px;
+        min-height: 220px;
+        overflow: hidden;
+    }
+
+    .card h3 {
+        margin-top: 0;
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 90%;
+    }
+
+    /* Colores */
+    .morado {
+        background: #6a66f0;
+    }
+
+    .azul {
+        background: #2bb7ff;
+    }
+
+    /* Círculo con imagen y link */
+    .icono-link {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .icono-link img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icono-link:hover {
+        transform: scale(1.1);
+        background: #222;
+    }
+
+    @media (max-width: 600px) {
+        .servicios {
+            padding: 30px;
+        }
+    }
+     body {
+        margin: 0;
+        background: #000;
+        font-family: Arial, sans-serif;
+    }
+
+    .carousel {
+        position: relative;
+        max-width: 1100px;
+        height: 420px;
+        margin: 40px auto;
+        overflow: hidden;
+        background: #111;
+        border-radius: 10px;
+    }
+
+    .slides {
+        display: flex;
+        width: 400%;
+        height: 100%;
+        transition: transform 0.6s ease;
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+    }
+
+    .slide img {
+        width: 27%;
+        height: 100%;
+        object-fit: cover;
+    object-position: center;
+    }
+
+    /* Flechas */
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px;
+        user-select: none;
+        background: rgba(0,0,0,0.4);
+        border-radius: 50%;
+    }
+
+    .arrow.left { left: 15px; }
+    .arrow.right { right: 15px; }
+
+    /* Indicadores */
+    .dots {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dot {
+        display: inline-block;
+        width: 25px;
+        height: 4px;
+        background: #777;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .carousel {
+            height: 260px;
+        }
+    }
+
+    .seccion {
+        max-width: 1200px;
+        margin: auto;
+        padding: 60px 20px;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .contenido {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .imagen {
+        flex: 1;
+    }
+
+    .imagen img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .texto {
+        flex: 2;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+        .contenido {
+            flex-direction: column;
+        }
+
+        .titulo {
+            font-size: 28px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Dav</div>
+    <nav>
+        <a href="#inicio">sobre mi</a>
+        <a href="#casa">servicios</a>
+        <a href="#chical">mis trabajos</a>
+        <a href="#hortalizas">porque trabajar conmigo</a>
+        <a href="blog.html">Blog</a>
+        <a href="#poesia">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>DJ MUSIC</h1>
+    <p>SAMBA-BACHATA</p>
+    <a href="#inicio" class="btn">VER MAS</a>
+</section>
+
+<div class="spacer"></div>
+
+<section id="inicio">
+    <h2 class="titulo">sobre mi</h2>
+    <div class="container">
+
+    <div class="imagen">
+        <img src="img/yo.jpg" alt="Jonathan">
+    </div>
+
+    <div class="texto">
+        <p>Mi nombre es Wylly wonka y soy diseñador de páginas web. 
+        Tengo la experiencia en desarrollo de sitios web para pequeñas y medianas empresas, 
+        hasta tiendas en línea con carrito de compras.</p>
+
+        <p>Me aseguro de utilizar siempre las últimas tecnologías de desarrollo web: 
+        HTML5, CSS3, jQuery, Wordpress. Si necesitás una página web moderna, funcional, 
+        que se adapte a todos los diferentes tipos de pantalla, te aseguro que llegaste al lugar correcto. Podes ponerte en contacto conmigo a través de Facebook, Linkedin o completando el formulario 
+        de contacto que se encuentra al final de mi sitio web.</p>
+
+        <a href="#" class="btn">VER MAS</a>
+    </div>
+
+</div>
+</section>
+
+<section id="casa">
+    <h2 class="titulo">servicios</h2>
+    <div class="grid">
+
+        <div class="card morado">
+            <h3>Diseño Web</h3>
+            <p>es la disciplina que se encarga de crear y organizar la apariencia, estructura y funcionalidad de un sitio web para que sea atractivo, fácil de usar y accesible en distintos dispositivos..</p>
+            <a class="icono-link">
+                <img src="img/mobile2.png" alt="Diseño Web">
+            </a>
+        </div>
+
+        <div class="card azul">
+            <h3>Adaptacion</h3>
+            <p>Diseños adaptables a móviles, tablets y computadoras ofreciendo lo mejor e indiscutible del mercado  .</p>
+            <a class="icono-link">
+                <img src="img/velocidad.png" alt="Responsive">
+            </a>
+        </div>
+
+        <div class="card morado">
+            <h3>Mantenimiento</h3>
+            <p>Optimización para motores de búsqueda y Google ofreciendo opciones a la NASA y a Disney.</p>
+            <a class="icono-link">
+                <img src="img/mantenimiento.png" alt="SEO">
+            </a>
+        </div>
+
+        <div class="card azul">
+            <h3>Autoadministrable</h3>
+            <p>Administra tu web sin depender de un programador, facil y apto.</p>
+            <a class="icono-link">
+                <img src="img/mobile2.png" alt="CMS">
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="chical">
+    <h2 class="titulo">mis trabajos</h2>
+
+<div class="carousel">
+
+    <div class="slides" id="slides">
+        <div class="slide">
+            <img src="img/foto5.jpg" alt="Imagen 1">
+        </div>
+        <div class="slide">
+            <img src="img/foto2.jpg" alt="Imagen 2">
+        </div>
+        <div class="slide">
+            <img src="img/foto3.jpg" alt="Imagen 3">
+        </div>
+        <div class="slide">
+            <img src="img/foto4.jpg" alt="Imagen 4">
+        </div>
+    </div>
+
+    <div class="arrow left" onclick="prev()">&#10094;</div>
+    <div class="arrow right" onclick="next()">&#10095;</div>
+
+    <div class="dots">
+        <span class="dot active" onclick="goTo(0)"></span>
+        <span class="dot" onclick="goTo(1)"></span>
+        <span class="dot" onclick="goTo(2)"></span>
+        <span class="dot" onclick="goTo(3)"></span>
+    </div>
+
+</div>
+
+<script>
+    let index = 0;
+    const slides = document.getElementById("slides");
+    const dots = document.querySelectorAll(".dot");
+    const totalSlides = dots.length;
+
+    function showSlide(i) {
+        index = i;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    function next() {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+    }
+
+    function prev() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        showSlide(index);
+    }
+
+    function goTo(i) {
+        showSlide(i);
+    }
+</script>
+</section>
+
+<section id="hortalizas">
+     <h1 class="titulo">Por qué trabajar conmigo</h1>
+
+    <div class="contenido">
+
+        <div class="imagen">
+            <img src="img/happy.webp" alt="Trabajando">
+        </div>
+
+        <div class="texto">
+            <p>
+                En el mundo actual, donde la tecnología está en constante evolución, he llegado a entender la importancia de contar con un ingeniero en software que no solo sepa programar, sino que también tenga habilidades de liderazgo y otras competencias interpersonales.
+            </p>
+
+            <p>
+                Para mí, esta combinación de habilidades puede ser la clave para el éxito de cualquier proyecto. La programación es la base de lo que hace un ingeniero en software, pero por sí sola no es suficiente.
+            </p>
+
+            <p>
+                Un ingeniero que también sabe liderar puede organizar el trabajo de manera efectiva, asegurarse de que todos estemos alineados con los objetivos del proyecto y que los plazos se cumplan.
+            </p>
+
+            <p>
+                Además, las habilidades de comunicación permiten conectar a los desarrolladores con las partes interesadas y lograr resultados claros y eficientes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="poesia">
+    <h2>contactos</h2>
+<div class="contacto-contenido">
+
+        <!-- Redes sociales -->
+        <div class="columna">
+            <p><strong>Sígueme en</strong></p>
+            <div class="redes">
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://tumblr.com" target="_blank"><i class="fab fa-tumblr"></i></a>
+                <a href="https://secure.computrabajo.com" target="_blank"><i class="fab fa-vk"></i></a>
+            </div>
+        </div>
+
+        <!-- Información de contacto -->
+        <div class="columna info">
+            <p><strong>Contacto</strong></p>
+            <p><i class="fas fa-paper-plane"></i>dh4565522@gmail.com</p>
+            <p><i class="fas fa-location-dot"></i>Estudiante de la universidad de Ecatepec</p>
+        </div>
+
+        <div class="columna suscripcion">
+            <p><strong>Sigue la pagina </strong></p>
+
+            <form action="mailto:TU_CORREO@gmail.com" method="post" enctype="text/plain">
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Adelant</button>
+            </form>
+        </div>
+    </div>
+<a href=https://web.whatsapp.com/ class="whatsapp" target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+</a>
+</section>
+
+</body>
+</html>
